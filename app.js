@@ -15,6 +15,7 @@ app.get("/", function(req, res){
 	res.sendFile("index.html");
 });
 
-app.listen("3000", function(){
-	console.log("server listening to port 3000")
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, function(){
+	console.log(`server is listening on ${PORT}`)
 });
