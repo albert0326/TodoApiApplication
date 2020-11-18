@@ -44,12 +44,12 @@ router.put("/:todoId", function(req, res){
 
 router.delete("/:todoId", function(req, res){
 	db.Todo.findOneAndDelete(req.params.todoId)
-	.then(function(data){
-		res.redirect("/api/todos");
-	})
-	.catch(function(err){
-		res.send(err);
-	})
+	.then(function(){
+       	res.json({message: 'We deleted it!'});
+   	})
+   	.catch(function(err){
+       	res.send(err);
+   	})
 })
 
 
